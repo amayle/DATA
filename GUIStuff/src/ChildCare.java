@@ -1,7 +1,4 @@
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
@@ -10,8 +7,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-public class FoodAndShelter {
-    public BorderPane FoodAndShelter() {
+public class ChildCare {
+    public BorderPane ChildCare() {
         BorderPane bpane2 = new BorderPane();
         bpane2.setStyle("-fx-background-color: #ffffff;");
         HBox top2 = new HBox();
@@ -20,23 +17,16 @@ public class FoodAndShelter {
         left2.setStyle("-fx-background-color: #2e86c1;");
         VBox right2 = new VBox();
         right2.setStyle("-fx-background-color: #ffffff;");
-        Label heading2 = new Label("Food and Shelter");
-        Button foodBank = new Button("Food banks");
-        foodBank.setStyle("-fx-background-color: #A3D5F7; " +
+        Label heading2 = new Label("Child Care");
+        Button lunches = new Button("Summer Lunches");
+        lunches.setStyle("-fx-background-color: #A3D5F7; " +
                 "-fx-border-color: #000000; -fx-border-width: 1px;");
-        foodBank.setMinSize(150, 50);
-        Button homeless = new Button("Homeless Shelters");
-        homeless.setStyle("-fx-background-color: #A3D5F7; " +
+        lunches.setMinSize(150, 50);
+        Button day_care = new Button("Affordable day care");
+        day_care.setStyle("-fx-background-color: #A3D5F7; " +
                 "-fx-border-color: #000000; -fx-border-width: 1px;");
-        homeless.setMinSize(150, 50);
-        Button clothing = new Button("Clothing banks");
-        clothing.setStyle("-fx-background-color: #A3D5F7; " +
-                "-fx-border-color: #000000; -fx-border-width: 1px;");
-        clothing.setMinSize(150, 50);
-        Button housingAssist = new Button("Housing Assistance");
-        housingAssist.setStyle("-fx-background-color: #A3D5F7; " +
-                "-fx-border-color: #000000; -fx-border-width: 1px;");
-        housingAssist.setMinSize(150, 50);
+
+        day_care.setMinSize(150, 50);
         Button back = new Button("Go Back");
         back.setStyle("-fx-background-color: #A3D5F7; " +
                 "-fx-border-color: #000000; -fx-border-width: 1px;");
@@ -46,7 +36,7 @@ public class FoodAndShelter {
         heading2.setStyle("-fx-background-color: #2e86c1;");
         heading2.setFont(Font.font("Verdana", FontWeight.BOLD, 50));
 
-        left2.getChildren().addAll(foodBank, homeless, clothing, housingAssist, back);
+        left2.getChildren().addAll(lunches, day_care, back);
         top2.setAlignment(Pos.CENTER);
         left2.setAlignment(Pos.TOP_CENTER);
         right2.setAlignment(Pos.TOP_CENTER);
@@ -56,15 +46,7 @@ public class FoodAndShelter {
         bpane2.setLeft(left2);
         bpane2.setRight(right2);
 
-        back.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                Education GUI = new Education();
-                Scene scene2 = new Scene(GUI.Education(), 800, 700);
-            }
-        });
         return bpane2;
-
 
     }
 }

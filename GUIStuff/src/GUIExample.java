@@ -100,6 +100,43 @@ public class GUIExample extends Application {
             }
         });
 
+        education.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Education GUI = new Education();
+                Scene scene2 = new Scene(GUI.Education(), 800, 700);
+                primaryStage.setScene(scene2);
+                primaryStage.show();
+            }
+        });
+        workForce.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                WorkForce GUI = new WorkForce();
+                Scene scene2 = new Scene(GUI.WorkForce(), 800, 700);
+                primaryStage.setScene(scene2);
+                primaryStage.show();
+            }
+        });
+        childCare.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                ChildCare GUI = new ChildCare();
+                Scene scene2 = new Scene(GUI.ChildCare(), 800, 700);
+                primaryStage.setScene(scene2);
+                primaryStage.show();
+            }
+        });
+
+        community.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Community GUI = new Community();
+                Scene scene2 = new Scene(GUI.Community(), 800, 700);
+                primaryStage.setScene(scene2);
+                primaryStage.show();
+            }
+        });
 
     }
 
