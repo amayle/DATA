@@ -9,11 +9,18 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Stage;
 
 public class FoodAndShelter {
-    public BorderPane FoodAndShelter() {
-        BorderPane bpane2 = new BorderPane();
-        bpane2.setStyle("-fx-background-color: #ffffff;");
+    Button foodBank;
+    Button homeless;
+    Button clothing;
+    Button housingAssist;
+    Button back;
+    BorderPane bpane;
+    public FoodAndShelter(Stage primaryStage) {
+        bpane = new BorderPane();
+        bpane.setStyle("-fx-background-color: #ffffff;");
         HBox top2 = new HBox();
         top2.setStyle("-fx-background-color: #2e86c1;");
         VBox left2 = new VBox();
@@ -21,26 +28,27 @@ public class FoodAndShelter {
         VBox right2 = new VBox();
         right2.setStyle("-fx-background-color: #ffffff;");
         Label heading2 = new Label("Food and Shelter");
-        Button foodBank = new Button("Food banks");
+        foodBank = new Button("Food banks");
         foodBank.setStyle("-fx-background-color: #A3D5F7; " +
                 "-fx-border-color: #000000; -fx-border-width: 1px;");
         foodBank.setMinSize(150, 50);
-        Button homeless = new Button("Homeless Shelters");
+        homeless = new Button("Homeless Shelters");
         homeless.setStyle("-fx-background-color: #A3D5F7; " +
                 "-fx-border-color: #000000; -fx-border-width: 1px;");
         homeless.setMinSize(150, 50);
-        Button clothing = new Button("Clothing banks");
+        clothing = new Button("Clothing banks");
         clothing.setStyle("-fx-background-color: #A3D5F7; " +
                 "-fx-border-color: #000000; -fx-border-width: 1px;");
         clothing.setMinSize(150, 50);
-        Button housingAssist = new Button("Housing Assistance");
+        housingAssist = new Button("Housing Assistance");
         housingAssist.setStyle("-fx-background-color: #A3D5F7; " +
                 "-fx-border-color: #000000; -fx-border-width: 1px;");
         housingAssist.setMinSize(150, 50);
-        Button back = new Button("Go Back");
+        back = new Button("Go Back");
         back.setStyle("-fx-background-color: #A3D5F7; " +
                 "-fx-border-color: #000000; -fx-border-width: 1px;");
         back.setMinSize(150, 50);
+
 
         top2.getChildren().addAll(heading2);
         heading2.setStyle("-fx-background-color: #2e86c1;");
@@ -52,19 +60,65 @@ public class FoodAndShelter {
         right2.setAlignment(Pos.TOP_CENTER);
 
 
-        bpane2.setTop(top2);
-        bpane2.setLeft(left2);
-        bpane2.setRight(right2);
+        bpane.setTop(top2);
+        bpane.setLeft(left2);
+        bpane.setRight(right2);
 
+
+        foodBank.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                FoodBank GUI = new FoodBank(primaryStage);
+                Scene scene2 = new Scene(GUI.getBpane(),800,700);
+                primaryStage.setScene(scene2);
+                primaryStage.show();
+
+            }
+        });
+
+        homeless.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                Homeless GUI = new Homeless(primaryStage);
+                Scene scene2 = new Scene(GUI.getBpane(), 800, 700);
+                primaryStage.setScene(scene2);
+                primaryStage.show();
+
+            }
+        });
+
+        clothing.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Clothing GUI = new Clothing(primaryStage);
+                Scene scene2 = new Scene(GUI.getBpane(), 800, 700);
+                primaryStage.setScene(scene2);
+                primaryStage.show();
+            }
+        });
+        housingAssist.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                HousingAssist GUI = new HousingAssist(primaryStage);
+                Scene scene2 = new Scene(GUI.getBpane(), 800, 700);
+                primaryStage.setScene(scene2);
+                primaryStage.show();
+            }
+        });
         back.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Education GUI = new Education();
-                Scene scene2 = new Scene(GUI.Education(), 800, 700);
+                GetHelp GUI = new GetHelp(primaryStage);
+                Scene scene2 = new Scene(GUI.getBpane(), 800, 700);
+                primaryStage.setScene(scene2);
+                primaryStage.show();
             }
         });
-        return bpane2;
 
 
+    }
+
+    public BorderPane getBpane() {
+        return bpane;
     }
 }

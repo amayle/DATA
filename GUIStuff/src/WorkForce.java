@@ -1,4 +1,7 @@
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
@@ -6,11 +9,16 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Stage;
 
 public class WorkForce {
-    public BorderPane WorkForce() {
-        BorderPane bpane2 = new BorderPane();
-        bpane2.setStyle("-fx-background-color: #ffffff;");
+    BorderPane bpane;
+    Button back;
+    Button workForce_solutions;
+    Button vocational_rehab;
+    public WorkForce(Stage primaryStage) {
+        bpane = new BorderPane();
+        bpane.setStyle("-fx-background-color: #ffffff;");
         HBox top2 = new HBox();
         top2.setStyle("-fx-background-color: #2e86c1;");
         VBox left2 = new VBox();
@@ -18,11 +26,11 @@ public class WorkForce {
         VBox right2 = new VBox();
         right2.setStyle("-fx-background-color: #ffffff;");
         Label heading2 = new Label("Work Opportunities");
-        Button workForce_solutions = new Button("WorkForce Solutions");
+        workForce_solutions = new Button("WorkForce Solutions");
         workForce_solutions.setStyle("-fx-background-color: #A3D5F7; " +
                 "-fx-border-color: #000000; -fx-border-width: 1px;");
         workForce_solutions.setMinSize(150, 50);
-        Button vocational_rehab = new Button("Vocational Rehab");
+        vocational_rehab = new Button("Vocational Rehab");
         vocational_rehab.setStyle("-fx-background-color: #A3D5F7; " +
                 "-fx-border-color: #000000; -fx-border-width: 1px;");
 
@@ -42,11 +50,40 @@ public class WorkForce {
         right2.setAlignment(Pos.TOP_CENTER);
 
 
-        bpane2.setTop(top2);
-        bpane2.setLeft(left2);
-        bpane2.setRight(right2);
+        bpane.setTop(top2);
+        bpane.setLeft(left2);
+        bpane.setRight(right2);
 
-        return bpane2;
+        vocational_rehab.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                VocationalRehab GUI = new VocationalRehab(primaryStage);
+                Scene scene2 = new Scene(GUI.getBpane(), 800, 700);
+                primaryStage.setScene(scene2);
+                primaryStage.show();
+            }
+        });
+        workForce_solutions.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                WorkforceSolution GUI = new WorkforceSolution(primaryStage);
+                Scene scene2 = new Scene(GUI.getBpane(), 800, 700);
+                primaryStage.setScene(scene2);
+                primaryStage.show();
+            }
+        });
 
+        back.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                GetHelp GUI = new GetHelp(primaryStage);
+                Scene scene2 = new Scene(GUI.getBpane(), 800, 700);
+                primaryStage.setScene(scene2);
+                primaryStage.show();
+            }
+        });
+    }
+    public BorderPane getBpane() {
+        return bpane;
     }
 }

@@ -11,12 +11,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
-public class ChildCare {
-    BorderPane bpane;
-    Button lunches;
-    Button day_care;
+public class VocationalRehab {
     Button back;
-    public ChildCare (Stage primaryStage) {
+    BorderPane bpane;
+    public VocationalRehab(Stage primaryStage) {
         bpane = new BorderPane();
         bpane.setStyle("-fx-background-color: #ffffff;");
         HBox top2 = new HBox();
@@ -25,26 +23,19 @@ public class ChildCare {
         left2.setStyle("-fx-background-color: #2e86c1;");
         VBox right2 = new VBox();
         right2.setStyle("-fx-background-color: #ffffff;");
-        Label heading2 = new Label("Child Care");
-        lunches = new Button("Summer Lunches");
-        lunches.setStyle("-fx-background-color: #A3D5F7; " +
-                "-fx-border-color: #000000; -fx-border-width: 1px;");
-        lunches.setMinSize(150, 50);
-        day_care = new Button("Affordable day care");
-        day_care.setStyle("-fx-background-color: #A3D5F7; " +
-                "-fx-border-color: #000000; -fx-border-width: 1px;");
+        Label heading2 = new Label("Vocational Rehab");
 
-        day_care.setMinSize(150, 50);
         back = new Button("Go Back");
         back.setStyle("-fx-background-color: #A3D5F7; " +
                 "-fx-border-color: #000000; -fx-border-width: 1px;");
         back.setMinSize(150, 50);
 
+
         top2.getChildren().addAll(heading2);
         heading2.setStyle("-fx-background-color: #2e86c1;");
         heading2.setFont(Font.font("Verdana", FontWeight.BOLD, 50));
 
-        left2.getChildren().addAll(lunches, day_care, back);
+        left2.getChildren().addAll( back);
         top2.setAlignment(Pos.CENTER);
         left2.setAlignment(Pos.TOP_CENTER);
         right2.setAlignment(Pos.TOP_CENTER);
@@ -53,37 +44,16 @@ public class ChildCare {
         bpane.setTop(top2);
         bpane.setLeft(left2);
         bpane.setRight(right2);
-
-        lunches.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                Lunches GUI = new Lunches(primaryStage);
-                Scene scene2 = new Scene(GUI.getBpane(), 800, 700);
-                primaryStage.setScene(scene2);
-                primaryStage.show();
-            }
-        });
-        day_care.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                DayCare GUI = new DayCare(primaryStage);
-                Scene scene2 = new Scene(GUI.getBpane(), 800, 700);
-                primaryStage.setScene(scene2);
-                primaryStage.show();
-            }
-        });
         back.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                GetHelp GUI = new GetHelp(primaryStage);
+                WorkForce GUI = new WorkForce(primaryStage);
                 Scene scene2 = new Scene(GUI.getBpane(), 800, 700);
                 primaryStage.setScene(scene2);
                 primaryStage.show();
             }
         });
-
     }
-
     public BorderPane getBpane() {
         return bpane;
     }
