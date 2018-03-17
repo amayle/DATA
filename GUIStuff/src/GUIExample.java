@@ -1,4 +1,6 @@
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -6,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
@@ -69,12 +72,34 @@ public class GUIExample extends Application {
         left.setAlignment(Pos.TOP_CENTER);
         right.setAlignment(Pos.TOP_CENTER);
 
+
         bpane.setTop(top);
         bpane.setLeft(left);
         bpane.setRight(right);
         Scene scene1 = new Scene(bpane, 800, 700);
         primaryStage.setScene(scene1);
         primaryStage.show();
+
+        foodShelter.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                FoodAndShelter GUI = new FoodAndShelter();
+                Scene scene2 = new Scene(GUI.FoodAndShelter(), 800, 700);
+                primaryStage.setScene(scene2);
+                primaryStage.show();
+
+            }
+        });
+
+        health.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                Health GUI = new Health();
+                Scene scene2 = new Scene(GUI.Health(), 800, 700);
+                primaryStage.setScene(scene2);
+                primaryStage.show();
+
+            }
+        });
+
 
     }
 
