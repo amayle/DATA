@@ -39,7 +39,7 @@ public class Health {
         back = new Button("Go Back");
         back.setStyle("-fx-background-color: #A3D5F7; " +
                 "-fx-border-color: #000000; -fx-border-width: 1px;");
-        back.setMinSize(150, 50);
+        back.setMinSize(200, 50);
 
 
         top2.getChildren().addAll(heading2);
