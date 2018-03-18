@@ -67,18 +67,19 @@ public class ShelterSources {
         return body;
     }
 
-    public static String crossroadsForWomenTitle() throws IOException {
-        String url = crossroadsUrl;
-        Document document = Jsoup.connect(url).get();
-        String title = document.title();
-        return title;
-    }
-    public static String crossroadsForWomenBody() throws IOException {
-        String url = crossroadsUrl;
-        Document document = Jsoup.connect(url).get();
-        String body = document.body().text();
-        return body;
-    }
+//    public static String crossroadsForWomenTitle() throws IOException {
+//        String url = crossroadsUrl;
+//        Document document = Jsoup.connect(url).get();
+//        String title = document.title();
+//        return title;
+//    }
+//    public static String crossroadsForWomenBody() throws IOException {
+//        String url = crossroadsUrl;
+//        Document document = Jsoup.connect(url).get();
+//        String body = document.body().text();
+//        body.substring(30);
+//        return body.substring(252, 700);
+//    }
 
     public static String enumTitle(int i){
         try {
@@ -91,8 +92,8 @@ public class ShelterSources {
                     return rockAbqTitle();
                 case 4:
                     return stMartinHospitalityCenterTitle();
-                case 5:
-                    return crossroadsForWomenTitle();
+//                case 5:
+//                    return crossroadsForWomenTitle();
             }
         }
         catch(IOException e){
@@ -114,8 +115,8 @@ public class ShelterSources {
                     return rockAbqBody();
                 case 4:
                     return stMartinHospitalityCenterBody();
-                case 5:
-                    return crossroadsForWomenBody();
+//                case 5:
+//                    return crossroadsForWomenBody();
             }
         }
         catch(IOException e){

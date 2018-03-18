@@ -42,13 +42,13 @@ public class Homeless {
         heading2.setStyle("-fx-background-color: #2e86c1;");
         heading2.setFont(Font.font("Verdana", FontWeight.BOLD, 50));
 
-        left2.getChildren().addAll(back);
+
         top2.setAlignment(Pos.CENTER);
         left2.setAlignment(Pos.TOP_CENTER);
         right2.setAlignment(Pos.TOP_CENTER);
 
         buttons = new ArrayList<Button>();
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 4; i++) {
             final int b = i;
             buttons.add(new Button("" + ShelterSources.enumTitle(i)));
             buttons.get(i-1).setStyle("-fx-background-color: #A3D5F7; " +
@@ -72,6 +72,7 @@ public class Homeless {
             left2.getChildren().add(buttons.get(i-1));
 
         }
+        left2.getChildren().addAll(back);
 
 
             bpane.setTop(top2);
