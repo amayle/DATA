@@ -19,7 +19,8 @@ public class CollegeHours {
         String url = CNMURL;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
-        return body;
+
+        return body.substring(2404, 5257);
     }
 
     public static String  FullStackTitle() throws IOException {
@@ -33,7 +34,8 @@ public class CollegeHours {
         String url = FullStackURL;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
-        return body;
+        System.out.println(body);
+        return body.substring(123, 271) +body.substring(341, 1198);
     }
 
 

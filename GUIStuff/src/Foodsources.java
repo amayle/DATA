@@ -26,7 +26,9 @@ public class Foodsources {
         String url = abqStoreHouseUrl;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
-        return body;
+        System.out.println(body);
+        return body.substring(98,857) + body.substring(991, 1228)+ body.substring(1875, 2346);
+
     }
 
     public static String foodRunnerTitle() throws IOException {
@@ -39,7 +41,8 @@ public class Foodsources {
         String url = roadRunnerUrl;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
-        return body;
+
+        return body.substring(12153, 12432);
     }
 
     public static String  foodProjectTitle() throws IOException {
@@ -52,21 +55,22 @@ public class Foodsources {
         String url = foodProject;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
-        return body;
+        return body.substring(462,1097);
     }
 
-    public static String  unitedMethodistFoodPantryTitle() throws IOException {
-        String url = unitedFoodUrl;
-        Document document = Jsoup.connect(url).get();
-        String title = document.title();
-        return title;
-    }
-    public static String  unitedMethodistFoodPantryBody() throws IOException {
-        String url = unitedFoodUrl;
-        Document document = Jsoup.connect(url).get();
-        String body = document.body().text();
-        return body;
-    }
+//    public static String  unitedMethodistFoodPantryTitle() throws IOException {
+//        String url = unitedFoodUrl;
+//        Document document = Jsoup.connect(url).get();
+//        String title = document.title();
+//        return title;
+//    }
+//    public static String  unitedMethodistFoodPantryBody() throws IOException {
+//        String url = unitedFoodUrl;
+//        Document document = Jsoup.connect(url).get();
+//        String body = document.body().text();
+//        System.out.println(body);
+//        return body;
+//    }
 
 //    public static String comidaFoodPantryTitle() throws IOException {
 //        String url = comidaUrl;
@@ -114,8 +118,8 @@ public class Foodsources {
                     return foodRunnerTitle();
                 case 3:
                     return foodProjectTitle();
-                case 4:
-                    return unitedMethodistFoodPantryTitle();
+//                case 4:
+//                    return unitedMethodistFoodPantryTitle();
 //                case 5:
 //                    return comidaFoodPantryTitle();
 //                case 6:
@@ -141,8 +145,8 @@ public class Foodsources {
                     return foodRunnerBody();
                 case 3:
                     return foodProjectBody();
-                case 4:
-                    return unitedMethodistFoodPantryBody();
+//                case 4:
+//                    return unitedMethodistFoodPantryBody();
 //                case 5:
 //                    return comidaFoodPantryBody();
 //                case 6:

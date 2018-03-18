@@ -46,7 +46,7 @@ public class FoodBank {
         left2.setAlignment(Pos.TOP_CENTER);
         right2.setAlignment(Pos.TOP_CENTER);
         buttons = new ArrayList<Button>();
-        for (int i = 1; i <= 4; i++) {
+        for (int i = 1; i <= 3; i++) {
             final int b = i;
             buttons.add(new Button("" + Foodsources.enumTitle(i)));
             buttons.get(i-1).setStyle("-fx-background-color: #A3D5F7; " +

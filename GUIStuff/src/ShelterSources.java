@@ -36,20 +36,20 @@ public class ShelterSources {
         String url = healthcareForHomelessUrl;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
-        return body;
+        return body.substring(821,1563);
     }
 
     public static String rockAbqTitle() throws IOException {
         String url = rockAbqUrl;
         Document document = Jsoup.connect(url).get();
         String title = document.title();
-
         return title;
     }
     public static String rockAbqBody() throws IOException {
         String url = rockAbqUrl;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
+        System.out.println(body);
         return body;
     }
 
