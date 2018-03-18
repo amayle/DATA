@@ -15,56 +15,56 @@ public class UrgentServices {
 
 
 
-    public static String  storeHouseTitle() throws IOException {
+    public static String  dukeCityTitle() throws IOException {
         String url = dukeCity;
         Document document = Jsoup.connect(url).get();
         String title = document.title();
         return title;
     }
-    public static String  storeHouseBody() throws IOException {
+    public static String  dukeCityBody() throws IOException {
         String url = dukeCity;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
-        return body;
+        return body.substring(3663, 4733);
     }
 
-    public static String foodRunnerTitle() throws IOException {
+    public static String nextCareTitle() throws IOException {
         String url = nextCare;
         Document document = Jsoup.connect(url).get();
         String title = document.title();
         return title;
     }
-    public static String foodRunnerBody() throws IOException {
+    public static String nextCareBody() throws IOException {
         String url = nextCare;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
-        return body;
+        return body.substring(888, 1375);
     }
 
-    public static String  foodProjectTitle() throws IOException {
+    public static String  aspenTitle() throws IOException {
         String url = aspen;
         Document document = Jsoup.connect(url).get();
         String title = document.title();
         return title;
     }
-    public static String  foodProjectBody() throws IOException {
+    public static String  aspenBody() throws IOException {
         String url = aspen;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
         return body;
     }
 
-    public static String  unitedMethodistFoodPantryTitle() throws IOException {
+    public static String  railYardTitle() throws IOException {
         String url = railyard;
         Document document = Jsoup.connect(url).get();
         String title = document.title();
         return title;
     }
-    public static String  unitedMethodistFoodPantryBody() throws IOException {
+    public static String  railYardBody() throws IOException {
         String url = railyard;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
-        return body;
+        return body.substring(0, 111);
     }
 
     public static String  concentraTitle() throws IOException {
@@ -83,13 +83,13 @@ public class UrgentServices {
         try {
             switch (i) {
                 case 1:
-                    return storeHouseTitle();
+                    return dukeCityTitle();
                 case 2:
-                    return foodRunnerTitle();
+                    return nextCareTitle();
                 case 3:
-                    return foodProjectTitle();
+                    return aspenTitle();
                 case 4:
-                    return unitedMethodistFoodPantryTitle();
+                    return railYardTitle();
                 case 5:
                     return concentraTitle();
 //                case 6:
@@ -110,13 +110,13 @@ public class UrgentServices {
         try {
             switch (i) {
                 case 1:
-                    return storeHouseBody();
+                    return dukeCityBody();
                 case 2:
-                    return foodRunnerBody();
+                    return nextCareBody();
                 case 3:
-                    return foodProjectBody();
+                    return aspenBody();
                 case 4:
-                    return unitedMethodistFoodPantryBody();
+                    return railYardBody();
                 case 5:
                     return concentraBody();
 //                case 6:
@@ -134,3 +134,4 @@ public class UrgentServices {
     }
 
 }
+
