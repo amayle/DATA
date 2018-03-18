@@ -22,7 +22,38 @@ public class ShelterSources {
         String url = steelBridgeUrl;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
+
+        body = body.substring(606);
+        String substr1 = body.substring(0, 604);
+        String substr2 = body.substring(640);
+        body = substr1 + "\n\n" + substr2;
+        substr1 = body.substring(0, 907);
+        substr2 = body.substring(918);
+        body = substr1 + "\n\n" + substr2;
+        substr1 = body.substring(0, 1197);
+        substr2 = body.substring(1231);
+        body = substr1 + "\n\n" + substr2;
+        substr1 = body.substring(0, 1412);
+        substr2 = body.substring(1412);
+        body = substr1 + "\n\n" + substr2;
+        substr1 = body.substring(0, 2153);
+        substr2 = body.substring(2307);
+        body = substr1 + "\n\n" + substr2;
+        substr1 = body.substring(0, 2681);
+        substr2 = body.substring(2681);
+        body = substr1 + "\n\n" + substr2;
+        substr1 = body.substring(0, 3030);
+        substr2 = body.substring(3030);
+        body = substr1 + "\n\n" + substr2;
+        substr1 = body.substring(0, 3941);
+        substr2 = body.substring(3941);
+        body = substr1 + "\n\n" + substr2;
+        substr1 = body.substring(0, 4198);
+        substr2 = body.substring(4198);
+        body = substr1 + "\n\n" + substr2;
+        body = body.substring(0, 4291);
         return body;
+
     }
 
 
