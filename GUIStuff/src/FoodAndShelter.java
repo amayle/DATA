@@ -49,11 +49,13 @@ public class FoodAndShelter {
                 "-fx-border-color: #000000; -fx-border-width: 1px;");
         back.setMinSize(150, 50);
 
+        Label intro = new Label("The Sections listed to the left will take you to different options for food and shelter." +
+                "\nYou can find food banks, homeless shelters, clothing banks and housing assistance.");
 
         top2.getChildren().addAll(heading2);
         heading2.setStyle("-fx-background-color: #2e86c1;");
         heading2.setFont(Font.font("Verdana", FontWeight.BOLD, 50));
-
+        right2.getChildren().add(intro);
         left2.getChildren().addAll(foodBank, homeless, clothing, housingAssist, back);
         top2.setAlignment(Pos.CENTER);
         left2.setAlignment(Pos.TOP_CENTER);
