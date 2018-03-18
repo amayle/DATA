@@ -2,21 +2,21 @@ import java.io.IOException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-public class LibraryHours {
+public class CollegeHours {
 
 
-    private static final String libraryURL = "https://abqlibrary.org/hours-locations";
+    private static final String CNMURL = "https://www.cnm.edu/depts/student-services/hours";
 
 
-    public static String  LibraryTitle() throws IOException {
-        String url = libraryURL;
+    public static String  CNMTitle() throws IOException {
+        String url = CNMURL;
         Document document = Jsoup.connect(url).get();
         String title = document.title();
         return title;
     }
 
-    public static String  LibraryBody() throws IOException {
-        String url = libraryURL;
+    public static String  CNMBody() throws IOException {
+        String url = CNMURL;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
         return body;
@@ -28,7 +28,10 @@ public class LibraryHours {
         try {
             switch (i) {
                 case 1:
-                    return LibraryTitle();
+                    return CNMTitle();
+
+//                case 5:
+//                    return crossroadsForWomenTitle();
             }
         }
         catch(IOException e){
@@ -43,7 +46,7 @@ public class LibraryHours {
         try {
             switch (i) {
                 case 1:
-                    return LibraryBody();
+                    return CNMBody();
 
             }
         }

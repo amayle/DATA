@@ -21,12 +21,11 @@ public class Community {
     BorderPane bpane;
     VBox right2;
 
-    private Button add = new Button("Submit");
-
-    private final VBox chatBox = new VBox(5);
-    private List<Label> messages = new ArrayList<>();
-    private ScrollPane container = new ScrollPane();
-    private int index = 0;
+    Button add = new Button("Submit");
+    VBox chatBox = new VBox(5);
+    List<Label> messages = new ArrayList<>();
+    ScrollPane container = new ScrollPane();
+    int i = 0;
     TextField text;
     public Community(Stage primaryStage) {
         bpane = new BorderPane();
@@ -90,13 +89,13 @@ public class Community {
         chatBox.getStyleClass().add("chatbox");
         add.setOnAction(evt->{
             messages.add(new Label(text.getText()));
-            if(index%2==0){
-                messages.get(index).setAlignment(Pos.CENTER_LEFT);
+            if(i%2==0){
+                messages.get(i).setAlignment(Pos.CENTER_RIGHT);
             }else{
-                messages.get(index).setAlignment(Pos.CENTER_RIGHT);
+                messages.get(i).setAlignment(Pos.CENTER_LEFT);
             }
-            chatBox.getChildren().add(messages.get(index));
-            index++;
+            chatBox.getChildren().add(messages.get(i));
+            i++;
 
             text.clear();
         });

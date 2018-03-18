@@ -4,16 +4,21 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class College {
     Button back;
     BorderPane bpane;
+    ArrayList<Button> buttons;
     public College(Stage primaryStage) {
         bpane = new BorderPane();
         bpane.setStyle("-fx-background-color: #ffffff;");
@@ -34,13 +39,33 @@ public class College {
         top2.getChildren().addAll(heading2);
         heading2.setStyle("-fx-background-color: #2e86c1;");
         heading2.setFont(Font.font("Verdana", FontWeight.BOLD, 50));
-
-        left2.getChildren().addAll( back);
+        
         top2.setAlignment(Pos.CENTER);
         left2.setAlignment(Pos.TOP_CENTER);
         right2.setAlignment(Pos.TOP_CENTER);
 
 
+        buttons = new ArrayList<Button>();
+        buttons.add(new Button("" + CollegeHours.enumTitle(1)));
+        buttons.get(0).setStyle("-fx-background-color: #A3D5F7; " +
+                "-fx-border-color: #000000; -fx-border-width: 1px;");
+        buttons.get(0).setMaxSize(200, 50);
+        buttons.get(0).setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                right2.getChildren().clear();
+                ScrollPane container = new ScrollPane();
+                Text info = new Text(CollegeHours.enumBody(1));
+                Text title = new Text(CollegeHours.enumTitle(1));
+                info.setWrappingWidth(550);
+                container.setContent(info);
+                right2.getChildren().addAll(container);
+                top2.getChildren().clear();
+                top2.getChildren().addAll(title);
+            }
+
+        });
+        left2.getChildren().addAll(buttons.get(0),back);
         bpane.setTop(top2);
         bpane.setLeft(left2);
         bpane.setRight(right2);
