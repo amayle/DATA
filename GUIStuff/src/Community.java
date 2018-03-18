@@ -21,7 +21,8 @@ public class Community {
     BorderPane bpane;
     VBox right2;
 
-    private final Button add = new Button("Add");
+    private Button add = new Button("Submit");
+
     private final VBox chatBox = new VBox(5);
     private List<Label> messages = new ArrayList<>();
     private ScrollPane container = new ScrollPane();
@@ -39,7 +40,9 @@ public class Community {
         Label heading2 = new Label("Community Center");
         Label placeHolder = new Label("This is where community center goes");
         text = new TextField();
-
+        add.setMinSize(600, 30);
+        add.setStyle("-fx-background-color: #A3D5F7; " +
+                "-fx-border-color: #000000; -fx-border-width: 1px;");
 
 
         Button back = new Button("Go Back");
@@ -89,12 +92,9 @@ public class Community {
             messages.add(new Label(text.getText()));
             if(index%2==0){
                 messages.get(index).setAlignment(Pos.CENTER_LEFT);
-
             }else{
                 messages.get(index).setAlignment(Pos.CENTER_RIGHT);
-
             }
-
             chatBox.getChildren().add(messages.get(index));
             index++;
 

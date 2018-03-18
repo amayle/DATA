@@ -15,13 +15,3 @@
 
   }
 
- .button{
-
- -fx-background-color:#000000;
- -fx-text-fill:white;
- -fx-pref-height:25px;
- -fx-pref-width:50px;
- -fx-translate-x:75;
- -fx-translate-y:410;
-
- }
