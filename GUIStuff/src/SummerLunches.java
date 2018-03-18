@@ -1,36 +1,36 @@
-import java.io.IOException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-public class LibraryHours {
+import java.io.IOException;
 
-    private static final String libraryURL = "https://abqlibrary.org/hours-locations";
+public class SummerLunches {
 
 
-    public static String  LibraryTitle() throws IOException {
-        String url = libraryURL;
+    private static final String summerLunch = "http://www.cabq.gov/family/income-eligible-services/health-social-services/youth-food-service-program";
+
+
+    public static String summerTitle() throws IOException {
+        String url = summerLunch;
         Document document = Jsoup.connect(url).get();
         String title = document.title();
         return title;
     }
 
-    public static String  LibraryBody() throws IOException {
-        String url = libraryURL;
+    public static String summerBody() throws IOException {
+        String url = summerLunch;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
         return body;
     }
 
 
-
-    public static String enumTitle(int i){
+    public static String enumTitle(int i) {
         try {
             switch (i) {
                 case 1:
-                    return LibraryTitle();
+                    return summerTitle();
             }
-        }
-        catch(IOException e){
+        } catch (IOException e) {
             System.out.println("BROKEN LINK FOR TITLES!!");
             System.exit(1);
         }
@@ -38,20 +38,20 @@ public class LibraryHours {
 
     }
 
-    public static String enumBody(int i){
+    public static String enumBody(int i) {
         try {
             switch (i) {
                 case 1:
-                    return LibraryBody();
+                    return summerBody();
 
             }
-        }
-        catch(IOException e){
+        } catch (IOException e) {
             System.out.println("BROKEN LINK!!");
             System.exit(1);
         }
         return "HOW DID YOU GET HERE!!!";
 
     }
+
 
 }

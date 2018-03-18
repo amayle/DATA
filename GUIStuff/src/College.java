@@ -39,33 +39,38 @@ public class College {
         top2.getChildren().addAll(heading2);
         heading2.setStyle("-fx-background-color: #2e86c1;");
         heading2.setFont(Font.font("Verdana", FontWeight.BOLD, 50));
-        
+
         top2.setAlignment(Pos.CENTER);
         left2.setAlignment(Pos.TOP_CENTER);
         right2.setAlignment(Pos.TOP_CENTER);
 
 
         buttons = new ArrayList<Button>();
-        buttons.add(new Button("" + CollegeHours.enumTitle(1)));
-        buttons.get(0).setStyle("-fx-background-color: #A3D5F7; " +
-                "-fx-border-color: #000000; -fx-border-width: 1px;");
-        buttons.get(0).setMaxSize(200, 50);
-        buttons.get(0).setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e) {
-                right2.getChildren().clear();
-                ScrollPane container = new ScrollPane();
-                Text info = new Text(CollegeHours.enumBody(1));
-                Text title = new Text(CollegeHours.enumTitle(1));
-                info.setWrappingWidth(550);
-                container.setContent(info);
-                right2.getChildren().addAll(container);
-                top2.getChildren().clear();
-                top2.getChildren().addAll(title);
-            }
+        for (int i =1; i<=2; i++) {
+            final int b = i;
+            buttons.add(new Button("" + CollegeHours.enumTitle(i)));
+            buttons.get(i-1).setStyle("-fx-background-color: #A3D5F7; " +
+                    "-fx-border-color: #000000; -fx-border-width: 1px;");
+            buttons.get(i-1).setMaxSize(200, 50);
+            buttons.get(i-1).setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent e) {
+                    right2.getChildren().clear();
+                    ScrollPane container = new ScrollPane();
+                    Text info = new Text(CollegeHours.enumBody(b));
+                    Text title = new Text(CollegeHours.enumTitle(b));
+                    info.setWrappingWidth(500);
+                    container.setContent(info);
+                    container.setMinWidth(550);
+                    right2.getChildren().addAll(container);
+                    top2.getChildren().clear();
+                    top2.getChildren().addAll(title);
+                }
 
-        });
-        left2.getChildren().addAll(buttons.get(0),back);
+            });
+            left2.getChildren().addAll(buttons.get(i-1));
+        }
+        left2.getChildren().add(back);
         bpane.setTop(top2);
         bpane.setLeft(left2);
         bpane.setRight(right2);

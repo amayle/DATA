@@ -11,7 +11,6 @@ public class ShelterSources {
     private static final String stMartin = "https://www.hopeworksnm.org/contact/";
     private static final String crossroadsUrl = "https://crossroadsowensboro.org/emergency-womens-shelter/";
 
-
     public static String  steelBridgeTitle() throws IOException {
         String url = steelBridgeUrl;
         Document document = Jsoup.connect(url).get();

@@ -4,16 +4,21 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class HealthCare {
     Button back;
     BorderPane bpane;
+    ArrayList<Button> buttons;
     public HealthCare(Stage primaryStage) {
         bpane = new BorderPane();
         bpane.setStyle("-fx-background-color: #ffffff;");
@@ -35,10 +40,38 @@ public class HealthCare {
         heading2.setStyle("-fx-background-color: #2e86c1;");
         heading2.setFont(Font.font("Verdana", FontWeight.BOLD, 40));
 
+        buttons = new ArrayList<Button>();
+        for (int i = 1; i <= 4; i++) {
+            final int b = i;
+            buttons.add(new Button("" + HealthSources.enumTitle(i)));
+            buttons.get(i-1).setStyle("-fx-background-color: #A3D5F7; " +
+                    "-fx-border-color: #000000; -fx-border-width: 1px;");
+            buttons.get(i-1).setMaxSize(200, 50);
+            buttons.get(i - 1).setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent e) {
+                    right2.getChildren().clear();
+                    ScrollPane container = new ScrollPane();
+                    Text info = new Text(HealthSources.enumBody(b));
+                    Text title = new Text(HealthSources.enumTitle(b));
+                    info.setWrappingWidth(500);
+                    container.setContent(info);
+                    container.setMinWidth(550);
+                    right2.getChildren().addAll(container);
+                    top2.getChildren().clear();
+                    top2.getChildren().addAll(title);
+                }
+
+            });
+            left2.getChildren().add(buttons.get(i-1));
+
+        }
+
         left2.getChildren().addAll( back);
         top2.setAlignment(Pos.CENTER);
         left2.setAlignment(Pos.TOP_CENTER);
         right2.setAlignment(Pos.TOP_CENTER);
+
 
 
         bpane.setTop(top2);

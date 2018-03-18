@@ -59,8 +59,9 @@ public class FoodBank {
                     ScrollPane container = new ScrollPane();
                     Text info = new Text(Foodsources.enumBody(b));
                     Text title = new Text(Foodsources.enumTitle(b));
-                    info.setWrappingWidth(550);
+                    info.setWrappingWidth(500);
                     container.setContent(info);
+                    container.setMinWidth(550);
                     right2.getChildren().addAll(container);
                     top2.getChildren().clear();
                     top2.getChildren().addAll(title);

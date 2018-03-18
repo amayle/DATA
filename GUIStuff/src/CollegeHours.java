@@ -6,7 +6,7 @@ public class CollegeHours {
 
 
     private static final String CNMURL = "https://www.cnm.edu/depts/student-services/hours";
-
+    private static final String FullStackURL = "https://deepdivecoding.com/fullstack/";
 
     public static String  CNMTitle() throws IOException {
         String url = CNMURL;
@@ -22,6 +22,19 @@ public class CollegeHours {
         return body;
     }
 
+    public static String  FullStackTitle() throws IOException {
+        String url = FullStackURL;
+        Document document = Jsoup.connect(url).get();
+        String title = document.title();
+        return title;
+    }
+
+    public static String  FullStackBody() throws IOException {
+        String url = FullStackURL;
+        Document document = Jsoup.connect(url).get();
+        String body = document.body().text();
+        return body;
+    }
 
 
     public static String enumTitle(int i){
@@ -29,9 +42,8 @@ public class CollegeHours {
             switch (i) {
                 case 1:
                     return CNMTitle();
-
-//                case 5:
-//                    return crossroadsForWomenTitle();
+                case 2:
+                    return FullStackTitle();
             }
         }
         catch(IOException e){
@@ -47,6 +59,8 @@ public class CollegeHours {
             switch (i) {
                 case 1:
                     return CNMBody();
+                case 2:
+                    return FullStackBody();
 
             }
         }

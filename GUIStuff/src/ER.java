@@ -58,8 +58,9 @@ public class ER {
                     ScrollPane container = new ScrollPane();
                     Text info = new Text(UrgentServices.enumBody(b));
                     Text title = new Text(UrgentServices.enumTitle(b));
-                    info.setWrappingWidth(550);
+                    info.setWrappingWidth(500);
                     container.setContent(info);
+                    container.setMinWidth(550);
                     right2.getChildren().addAll(container);
                     top2.getChildren().clear();
                     top2.getChildren().addAll(title);

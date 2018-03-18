@@ -55,8 +55,9 @@ public class Library {
                     ScrollPane container = new ScrollPane();
                     Text info = new Text(LibraryHours.enumBody(1));
                     Text title = new Text(LibraryHours.enumTitle(1));
-                    info.setWrappingWidth(550);
+                    info.setWrappingWidth(500);
                     container.setContent(info);
+                    container.setMinWidth(550);
                     right2.getChildren().addAll(container);
                     top2.getChildren().clear();
                     top2.getChildren().addAll(title);
