@@ -23,7 +23,7 @@ public class HealthSources {
         String url = medClin1;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
-        return body;
+        return body.substring(345, 1476);
     }
 
 
@@ -37,7 +37,7 @@ public class HealthSources {
         String url = medClin2;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
-        return body;
+        return body.substring(759, 1572);
     }
 
     public static String medClin3Title() throws IOException {
@@ -51,7 +51,7 @@ public class HealthSources {
         String url = medClin3;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
-        return body;
+        return body.substring(735, 1635);
     }
 
     public static String medClin4Title() throws IOException {
@@ -64,7 +64,7 @@ public class HealthSources {
         String url = medClin4;
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
-        return body;
+        return body.substring(715, 1590);
     }
 
     public static String medClin5Title() throws IOException {
@@ -78,7 +78,7 @@ public class HealthSources {
         Document document = Jsoup.connect(url).get();
         String body = document.body().text();
         body.substring(30);
-        return body.substring(252, 700);
+        return body.substring(730, 1380);
     }
 
     public static String enumTitle(int i){
